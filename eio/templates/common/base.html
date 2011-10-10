@@ -1,0 +1,96 @@
+<!doctype html>
+    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}eculver.io{% endblock %}</title>
+
+    <meta name="msvalidate.01" content="9EE27C08A27D8002C8E90CE12AFE8671" />
+    <meta name="google-site-verification" content="UfSOhtNKmUg4c26AFZt4lCN81l_IapYuGlhrnS-NyS0" />
+
+    <meta name="description" content="Personal site of Evan Culver">
+    <meta name="author" content="Evan Culver">
+
+    <!-- Mobile viewport optimized -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Icons -->
+    <link rel="shortcut icon" href="{{ STATIC_URL }}/eio/img/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ STATIC_URL }}/eio/img/apple-touch-icon.png">
+
+    <!-- base stylesheet -->
+    <!--<link rel="stylesheet" href="{{ STATIC_URL }}/css/style.css">-->
+
+    <link href="{{ STATIC_URL }}/eio/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="{{ STATIC_URL }}/eio/css/print.css" media="print" rel="stylesheet" type="text/css" />
+
+    <!--[if lt IE 8]>
+    <link href="{{ STATIC_URL }}/eio/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- All other JS at bottom of page -->
+    <script src="{{ STATIC_URL }}/eio/js/lib/modernizr-2.0.6.min.js"></script>
+
+    <!-- DNS prefetching for commonly used APIs -->
+    <link rel="dns-prefetch" href="//ajax.googleapis.com" />
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Metrophobic|Varela' rel='stylesheet' type='text/css'>
+
+    {% if noindex %}
+        <!-- page-specific noindexing -->
+        <meta name="robots" content="noindex" />
+    {% endif %}
+
+    {% block extrahead %}{% endblock %}
+</head>
+
+
+<body id="{% block bodyid %}default{% endblock %}" class="{% block bodyclass %}default{% endblock %}">
+    <div id="container">
+    <header>
+        {% block header %}
+            <h1>Evan Culver</h1>
+            Web developer. Nerd.
+        {% endblock %}
+    </header>
+
+    <div id="main" role="main">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="sidebar">
+        {% block sidebar %}Sidebar!{% endblock %}
+    </div>
+
+    <footer>
+        {% block footer %}Footer{% endblock %}
+    </footer>
+    </div>
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}/eio/js/lib/jquery-1.6.4.min.js"><\/script>')</script>
+
+    <script defer src="{{ STATIC_URL }}/eio/js/script.js"></script>
+
+    {% block extrabody %}{% endblock %}
+
+    <script>
+        var _gaq=[['_setAccount','UA-26218941-1'],['_trackPageview'],['_trackPageLoadTime']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+        chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 7 ]>
+        <script defer src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+        <script defer>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+    </body>
+</html>

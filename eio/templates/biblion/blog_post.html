@@ -1,0 +1,25 @@
+{% extends "common/base.html" %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}/eio/css/syntax.css">
+{% endblock %}
+
+{% comment %}
+
+context vars:
+
+post: post instance
+
+{% endcomment %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+
+<div>posted by {{ post.author.first_name }} on {{ post.created|date:"l M jS, Y"}}</div>
+
+<div>
+    {{ post.content_html|safe }}
+</div>
+
+{% endblock %}

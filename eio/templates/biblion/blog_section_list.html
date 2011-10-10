@@ -1,0 +1,25 @@
+{% extends "common/base.html" %}
+
+{% comment %}
+
+context vars:
+
+section_slug: slug for the section which is being viewed
+section_name: name of the section which is being viewed
+posts: collection of post objects for this section
+
+{% endcomment %}
+
+{% block content %}
+
+<h1>{{ section_name }}</h1>
+
+<ul>
+    {% for post in posts %}
+        <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% empty %}
+        <li>No posts found</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

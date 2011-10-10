@@ -1,0 +1,21 @@
+{% extends "common/base.html" %}
+
+{% comment %}
+
+context vars:
+
+posts: collection of post objects for all sections
+
+{% endcomment %}
+
+{% block content %}
+
+<ul>
+    {% for post in posts %}
+        <li><a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% empty %}
+        <li>No posts found</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
