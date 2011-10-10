@@ -8,7 +8,7 @@ Built with Django 1.3.1 and uses the following 3rd party apps:
     * [django-admin-tools](https://bitbucket.org/izi/django-admin-tools/)
     * [South](http://south.aeracode.org/)
     * [django-extensions](https://github.com/django-extensions/django-extensions)
-    * [biblion] (https://github.com/eldarion/biblion)
+    * [biblion](https://github.com/eldarion/biblion)
 
 
 And on the front-end:
