@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     (r'^admin_tools/', include('admin_tools.urls')),
 
     # blog
-    (r'^blog/?', include('biblion.urls')),
+    (r'^blog/', include('biblion.urls')),
 
     # home
     (r'', include('eio.home.urls')),
