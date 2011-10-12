@@ -51,29 +51,73 @@
 
 <body id="{% block bodyid %}default{% endblock %}" class="{% block bodyclass %}default{% endblock %}">
     <div id="container">
-    <header>
-        {% block header %}
-            <h1>Evan Culver</h1>
-            Web developer. Nerd.
-        {% endblock %}
-    </header>
+        <header>
+            {% block header %}
+                <div id="branding">
+                    <h1>Evan Culver</h1>
+                    <span>Web developer. Nerd.</span>
+                </div>
+                {% block nav %}
+                    <ul>
+                        <li><a href="#" title="Blog">Blog</a></li>
+                        <li><a href="#" title="About">Blog</a></li>
+                        <li><a href="#" title="Projects">Blog</a></li>
+                        <li><a href="#" title="CV">CV</a></li>
+                    </ul>
+                {% endblock %}
+            {% endblock %}
+        </header>
 
-    <div id="main" role="main">
-        {% block content %}{% endblock %}
-    </div>
+        <div id="main" role="main">
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
 
-    <div id="sidebar">
-        {% block sidebar %}Sidebar!{% endblock %}
-    </div>
+        <div id="sidebar">
+            <div class="content">
+                {% block sidebar %}
+                    <section id="recent-articles">
+                        <h3>Recent Articles</h3>
+                        <ul>
+                            <li><a href="#" title="Recent Article">Recent Article</a></li>
+                            <li><a href="#" title="Another Recent article!">Another Recent Article</a></li>
+                        </ul>
+                    </section>
 
-    <footer>
-        {% block footer %}Footer{% endblock %}
-    </footer>
+                    <section id="projects">
+                        <h3>Projects</h3>
+                        <ul>
+                            <li><a href="#" title="Project 1">Project 1</a></li>
+                            <li><a href="#" title="Project 2">Project 2</a></li>
+                            <li><a href="#" title="Project 3">Project 3</a></li>
+                            <li><a href="#" title="Project 4">Project 4</a></li>
+                        </ul>
+                    </section>
+
+                    <section id="elsewhere">
+                        <h3>Elsewhere</h3>
+                        <ul>
+                            <li><div id="github-icon" class="icon"></div><a href="https://github.com/eculver" title="eculver on Github">Github</a></li>
+                            <li><div id="twitter-icon" class="icon"></div><a href="https://twitter.com/evanculver" title="@evanculver on Twitter">Twitter</a></li>
+                            <li><div id="linkedin-icon" class="icon"></div><a href="https://linkedin.com/evanculver" title="Evan Culver on LinkedIn">LinkedIn</a></li>
+                        </ul>
+                    </section>
+                {% endblock %}
+            </div>
+        </div>
+
+        <footer>
+            {% block footer %}Footer{% endblock %}
+        </footer>
     </div>
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}/eio/js/lib/jquery-1.6.4.min.js"><\/script>')</script>
+
+    <!-- Raphael mmmm -->
+    <script src="{{ STATIC_URL }}/eio/js/lib/raphael-min.js"></script>
 
     <script defer src="{{ STATIC_URL }}/eio/js/script.js"></script>
 

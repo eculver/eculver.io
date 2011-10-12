@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}/eio/css/syntax.css">
 {% endblock %}
 
+{% block bodyid %}blog-post{% endblock %}
+{% block bodyclass %}blog{% endblock %}
+
 {% comment %}
 
 context vars:
@@ -13,13 +16,13 @@ post: post instance
 {% endcomment %}
 
 {% block content %}
+    <article>
+        <h2>{{ post.title }}</h2>
 
-<h1>{{ post.title }}</h1>
+        <div class="meta">posted by {{ post.author.first_name }} on {{ post.created|date:"l M jS, Y"}}</div>
 
-<div>posted by {{ post.author.first_name }} on {{ post.created|date:"l M jS, Y"}}</div>
-
-<div>
-    {{ post.content_html|safe }}
-</div>
-
+        <div>
+            {{ post.content_html|safe }}
+        </div>
+    </article>
 {% endblock %}
