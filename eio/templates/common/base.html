@@ -59,9 +59,8 @@
                 </div>
                 {% block nav %}
                     <ul>
-                        <li><a href="#" title="Blog">Blog</a></li>
-                        <li><a href="#" title="About">Blog</a></li>
-                        <li><a href="#" title="Projects">Blog</a></li>
+                        <li><a href="#" title="About">About</a></li>
+                        <li><a href="#" title="Contact">Contact</a></li>
                         <li><a href="#" title="CV">CV</a></li>
                     </ul>
                 {% endblock %}
@@ -88,10 +87,25 @@
                     <section id="projects">
                         <h3>Projects</h3>
                         <ul>
-                            <li><a href="#" title="Project 1">Project 1</a></li>
-                            <li><a href="#" title="Project 2">Project 2</a></li>
-                            <li><a href="#" title="Project 3">Project 3</a></li>
-                            <li><a href="#" title="Project 4">Project 4</a></li>
+                            <li>
+                                <h4>In progress</h4>
+                                <ul>
+                                    <li><a href="#" title="Project 1">Project 1</a></li>
+                                    <li><a href="#" title="Project 2">Project 2</a></li>
+                                    <li><a href="#" title="Project 3">Project 3</a></li>
+                                    <li><a href="#" title="Project 4">Project 4</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Completed</h4>
+                                <ul>
+                                    <li><a href="#" title="Project 1">Project 1</a></li>
+                                    <li><a href="#" title="Project 2">Project 2</a></li>
+                                    <li><a href="#" title="Project 3">Project 3</a></li>
+                                    <li><a href="#" title="Project 4">Project 4</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </section>
 
@@ -101,6 +115,7 @@
                             <li><div id="github-icon" class="icon"></div><a href="https://github.com/eculver" title="eculver on Github">Github</a></li>
                             <li><div id="twitter-icon" class="icon"></div><a href="https://twitter.com/evanculver" title="@evanculver on Twitter">Twitter</a></li>
                             <li><div id="linkedin-icon" class="icon"></div><a href="https://linkedin.com/evanculver" title="Evan Culver on LinkedIn">LinkedIn</a></li>
+                            <li><div id="soundcloud-icon" class="icon"></div><a href="https://soundcloud.com/eculver" title="eculver on SoundCloud">SoundCloud</a></li>
                         </ul>
                     </section>
                 {% endblock %}
@@ -108,7 +123,37 @@
         </div>
 
         <footer>
-            {% block footer %}Footer{% endblock %}
+            {% block footer %}
+                <div class="footer-column">
+                    <ul>
+                        <li>footer item 1</li>
+                        <li>footer item 2</li>
+                        <li>footer item 3</li>
+                        <li>footer item 4</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li>footer item 1</li>
+                        <li>footer item 2</li>
+                        <li>footer item 3</li>
+                        <li>footer item 4</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li>footer item 1</li>
+                        <li>footer item 2</li>
+                        <li>footer item 3</li>
+                        <li>footer item 4</li>
+                    </ul>
+                </div>
+
+                <div class="copy">
+                    &copy; {% now "Y" %} Evan Culver.
+                </div>
+
+            {% endblock %}
         </footer>
     </div>
 

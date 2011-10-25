@@ -1,0 +1,152 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Combine the partials into a single screen stylesheet.
+@import "partials/page";
+@import "partials/form";
+@import "partials/two_col";
+
+// CSS 3 mixins
+@import "compass/css3";
+
+// Global variables
+$bg-color: black;
+$accent-color: #82e66e;
+$text-color: white;
+
+// Common mixins
+@mixin dark-bg {
+  background: url(../img/bg-texture.png) repeat; }
+
+@mixin body-text {
+  color: white;
+  font-family: "Metrophobic", sans-serif; }
+
+@mixin header-text {
+  color: white;
+  font-family: "Varela", sans-serif; }
+
+@mixin code-text {
+  font-family: "Droid Sans Mono", sans-serif; }
+
+body {
+  @include dark-bg;
+  @include body-text;
+  border-top: 8px solid $accent-color;
+  color: $text-color;
+  font-size: 16px; }
+
+header {
+  padding: 10px 0;
+  text-align: right; }
+
+h1, h2, h3, h4, h5, h6 {
+  @include header-text; }
+
+h1 {
+  font-size: 30px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 22px; }
+
+h5 {
+  font-size: 20px; }
+
+h6 {
+  font-size: 18px; }
+
+pre:before {
+  content: "Code:";
+  display: block;
+  margin-bottom: 10px; }
+
+pre {
+  @include dark-bg;
+  @include code-text;
+  border: 1px solid $accent-color;
+  margin: 10px 0;
+  overflow-x: auto;
+  padding: 10px; }
+
+a {
+  color: $text-color;
+  @include single-transition(all, 0.2s, ease-out); }
+
+a:hover {
+  @include text-shadow($accent-color 1px 1px 0); }
+
+// Layout styles
+$blueprint_grid_columns: 24;
+$blueprint_grid_width: 30px;
+
+#container {
+  @include container;
+  header, footer {
+    @include column(24, true); }
+  header {
+    #branding {
+      float: right;
+      margin-right: 45px; }
+    ul {
+      float: left;
+      margin: 10px 0 0 10px;
+      li {
+        display: inline;
+        list-style-type: none;
+        margin-right: 10px;
+        a {
+          color: $text-color;
+          text-decoration: none; } } } }
+  #main {
+    @include column(18); }
+  #sidebar {
+    @include column(6, true);
+    section {
+      margin-bottom: 10px;
+      h3 {
+        border-bottom: 1px solid $accent-color;
+        margin-bottom: 10px; }
+      ul {
+        margin: 10px 0 0 10px;
+        li {
+          clear: left;
+          list-style-type: none; }
+        a {
+          color: $text-color;
+          text-decoration: none; } } }
+    #elsewhere {
+      ul {
+        margin-top: 16px; } } }
+  .content {
+    padding: 10px; } }
+
+.icon {
+    float: left;
+    // adjust for line-height + icon height
+    margin: -8px 12px 10px 0;
+    height: 36px;
+    width: 36px;
+}
+
+// Blog-specific styles
+.blog {
+    article {
+        h1, .meta, p {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
