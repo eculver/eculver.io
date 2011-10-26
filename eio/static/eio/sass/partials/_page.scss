@@ -51,6 +51,7 @@ header {
 
 h1, h2, h3, h4, h5, h6 {
     @include header-text;
+    font-weight: normal;
 }
 
 h1 { @include font-size(30px); }
@@ -83,7 +84,7 @@ a {
 }
 
 a:hover {
-    @include text-shadow($accent-color 1px 1px 0);
+    @include text-shadow($accent-color 0 0 0.2em);
     color: $link-hover-color;
 }
 
@@ -157,6 +158,10 @@ $blueprint_grid_width: 30px;
                 li {
                     clear: left;
                     list-style-type: none;
+
+                    ul.first {
+                        margin-bottom: 10px;
+                    }
                 }
 
             }
@@ -171,16 +176,46 @@ $blueprint_grid_width: 30px;
     }
 
     footer {
+        @include font-size(13px);
+        background-color: rgba(black, 0.2);
+        margin-top: 20px;
+
         .footer-column {
             @include column(8);
+
+            h5 {
+                border-bottom: 1px solid $accent-color;
+                margin-bottom: 5px;
+            }
+
+            ul {
+                margin: 0;
+                padding-left: 10px;
+
+                li {
+                    list-style-type: none;
+                    margin: 5px 0;
+                }
+
+                li:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
 
-        .footer-column:last-child {
+        .footer-column.last {
             @include column(8, true);
+        }
+
+        .copy {
+            @include pie-clearfix;
+            margin-top: 20px;
+            padding: 10px;
+            text-align: right;
         }
     }
 
-    .content { padding: 10px; }
+    .content { padding: 20px; }
 }
 
 .icon {
