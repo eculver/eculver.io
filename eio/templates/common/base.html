@@ -48,15 +48,16 @@
 
 
 <body id="{% block bodyid %}default{% endblock %}" class="{% block bodyclass %}default{% endblock %}">
-    <div id="container">
+    <div class="container">
         <header>
             {% block header %}
                 <div id="branding">
-                    <h1>Evan Culver</h1>
-                    <span>Web developer. Nerd.</span>
+                    <h1><a href="{% url home %}" title="Home">Evan Culver</a></h1>
+                    <span><a href="{% url home %}" title="Home">Web developer. Nerd.</a></span>
                 </div>
                 {% block nav %}
                     <ul>
+                        <li><a href="{% url home %}" title="Home">Home</a></li>
                         <li><a href="#" title="About">About</a></li>
                         <li><a href="#" title="Contact">Contact</a></li>
                         <li><a href="#" title="CV">CV</a></li>
@@ -119,9 +120,11 @@
                 {% endblock %}
             </div>
         </div>
+    </div>
 
-        <footer>
-            {% block footer %}
+    <footer>
+        {% block footer %}
+            <div class="container">
                 <div class="footer-column">
                     <div class="content">
                         <h5>Recent Articles</h5>
@@ -159,10 +162,9 @@
                 <div class="copy">
                     &copy; {% now "Y" %} Evan Culver.
                 </div>
-
-            {% endblock %}
-        </footer>
-    </div>
+            </div>
+        {% endblock %}
+    </footer>
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>

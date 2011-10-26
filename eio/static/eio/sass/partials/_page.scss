@@ -17,6 +17,10 @@ $accent-color: #82e66e;
     background: url(../img/bg-texture.png) repeat;
 }
 
+@mixin transparent-bg {
+    background-color: rgba(black, 0.2);
+}
+
 @mixin body-text {
     color: white;
     font-family: "Metrophobic", sans-serif;
@@ -35,6 +39,10 @@ $accent-color: #82e66e;
 //-----------------------------------
 // Base
 //-----------------------------------
+
+html, body {
+    height: 100%;
+}
 
 body {
     @include dark-bg;
@@ -106,6 +114,8 @@ input:invalid, textarea:invalid {
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
+// standard padding for all content cells
+.content { padding: 20px; }
 
 //-----------------------------------
 // Layout styles
@@ -114,13 +124,12 @@ input:invalid, textarea:invalid {
 $blueprint_grid_columns: 24;
 $blueprint_grid_width: 30px;
 
-#container {
+.container {
     @include container;
 
-    header, footer {
-        @include column(24, true); }
-
     header {
+        @include column(24, true);
+
         #branding {
             float: right;
             margin-right: 45px; }
@@ -135,6 +144,10 @@ $blueprint_grid_width: 30px;
                 margin-right: 10px;
             }
         }
+    }
+
+    #main, #sidebar {
+        min-height: 100%;
     }
 
     #main {
@@ -174,48 +187,49 @@ $blueprint_grid_width: 30px;
             }
         }
     }
+}
 
-    footer {
-        @include font-size(13px);
-        background-color: rgba(black, 0.2);
-        margin-top: 20px;
+footer {
+    @include font-size(13px);
+    margin-top: 10px;
 
-        .footer-column {
-            @include column(8);
+    .footer-column {
+        @include column(8);
 
-            h5 {
-                border-bottom: 1px solid $accent-color;
-                margin-bottom: 5px;
-            }
-
-            ul {
-                margin: 0;
-                padding-left: 10px;
-
-                li {
-                    list-style-type: none;
-                    margin: 5px 0;
-                }
-
-                li:last-child {
-                    margin-bottom: 0;
-                }
-            }
+        h5 {
+            border-bottom: 1px solid $accent-color;
+            margin-bottom: 5px;
         }
 
-        .footer-column.last {
-            @include column(8, true);
-        }
+        ul {
+            margin: 0;
+            padding-left: 10px;
 
-        .copy {
-            @include pie-clearfix;
-            margin-top: 20px;
-            padding: 10px;
-            text-align: right;
+            li {
+                list-style-type: none;
+                margin: 5px 0;
+            }
+
+            li:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
-    .content { padding: 20px; }
+    .footer-column.last {
+        @include column(8, true);
+    }
+
+    .copy {
+        @include pie-clearfix;
+        margin-top: 20px;
+        padding: 10px;
+        text-align: right;
+    }
+}
+
+#main, #sidebar, footer {
+    @include transparent-bg;
 }
 
 .icon {
@@ -233,6 +247,10 @@ $blueprint_grid_width: 30px;
 
         h1, .meta, p {
             margin-bottom: 10px;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
         }
     }
 }
