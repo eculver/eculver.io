@@ -13,6 +13,7 @@ def default(request):
     "Returns context variables specific to totb views"
 
     context_extras = {
+        "DEBUG" : settings.DEBUG,
         "PROJECT_PREFIX" : settings.PROJECT_PREFIX,
         "WEBSITE_DOMAIN" : settings.WEBSITE_DOMAIN,
         "API_URL" : settings.API_URL,

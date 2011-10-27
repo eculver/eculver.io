@@ -55,6 +55,7 @@ API_URL = PROJECT_PREFIX + "api"
 
 # App-specific settings
 BIBLION_SECTIONS = [(2, 'personal'), (3, 'technical')]
+BIBLION_DISQUS_SHORTNAME = "eculverio"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -98,6 +99,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
+    'biblion.context_processors.default',
     'eio.contrib.context_processors.default',
 )
 
