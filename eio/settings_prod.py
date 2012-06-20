@@ -19,13 +19,13 @@ DATABASES = {
 }
 
 # For versioning static files. Set during deploys to deploy timestamp
-STATIC_VERSION = 'CURRENT_TIMESTAMP'
+STATIC_VERSION = '@CURRENT_TIMESTAMP@'
 
 # Symlinked from CDN production origin export
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static_build')
 
 # URL prefix for static files.
-STATIC_URL = 'http://cdn-prod.eio.distributed.io/static/%s' % STATIC_VERSION
+STATIC_URL = 'http://cdn-prod.eio.distributed.io/static/%s/' % STATIC_VERSION
 
 # Memcached-based caching
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'

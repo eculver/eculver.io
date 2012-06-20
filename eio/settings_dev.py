@@ -20,12 +20,14 @@ DATABASES = {
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+MEDIA_URL = '/media/'
+
 STATIC_VERSION = 'dev'
 
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static_build')
 
 # URL prefix for static files.
-STATIC_URL = '/static'
+STATIC_URL = '/static/'
 
 # In-memory local caching.
 CACHE_BACKEND = 'locmem:///'

@@ -89,7 +89,8 @@ SECRET_KEY = 'gfgaj@)o4w@0*33cpzgz@t5&s9!zuuck4lb5*r+zn*9f_nt@^v'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#    'django.template.loaders.eggs.Loader',
+    'dbtemplates.loader.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -136,6 +137,8 @@ INSTALLED_APPS = (
     #'django.contrib.admindocs',
 
     'eio.home',
+    'eio.flatpages',
+    'dbtemplates',
     'south',
     'biblion',
 )

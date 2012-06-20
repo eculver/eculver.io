@@ -19,10 +19,10 @@ DATABASES = {
 }
 
 # For versioning static files. Set during deploys to deploy timestamp
-STATIC_VERSION = 'CURRENT_TIMESTAMP'
+STATIC_VERSION = '@CURRENT_TIMESTAMP@'
 
 # Symlinked from CDN staging origin export
-STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+STATIC_ROOT = os.path.join(PROJECT_PATH, 'static_build')
 
 # URL prefix for static files.
 STATIC_URL = 'http://cdn-dev.eio.distributed.io/static/%s' % STATIC_VERSION
