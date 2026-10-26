@@ -34,6 +34,6 @@ simplegeo==3.0.127
 simplejson==2.2.1
 sorl-thumbnail==11.05.2
 sqlparse==0.1.2
-virtualenv==1.5.1
+virtualenv==21.14.13
 virtualenvwrapper==2.6.1
 wsgiref==0.1.2
